@@ -1,0 +1,30 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext("2d");
+
+	pincel.fillStyle = "grey"
+	pincel.fillRect(0,0,600,400)
+
+	var quantidade = 1
+
+	function exibeAlerta() {
+		if(quantidade <= 1) {
+			alert("yey")
+			quantidade++
+		}else {
+			if(quantidade == 5) {
+				alert("Desculpe mas teremos que bloquear o seu clique.")
+				quantidade++
+			}
+			if(quantidade < 5) {
+				alert("Pare de clicar.")
+				quantidade++
+			}
+		}
+	}
+
+	tela.onclick = exibeAlerta
+</script>

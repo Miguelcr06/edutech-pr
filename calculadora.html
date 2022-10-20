@@ -1,0 +1,63 @@
+<meta charset="UTF-8">
+
+<script>
+	
+function pulaLinha() {
+	document.write("<br>");
+	document.write("<br>");
+}
+
+function mostra(texto) {
+	document.write(texto);
+}
+
+var nome = prompt("Digite seu nome ");
+var operação = parseInt(prompt(nome + " Digite 1 para adição \n Digite 2 para subtracão \n Digite 3 para multiplicação \n Digite 4 para divisão"));
+
+
+
+if(operação == 1) {
+	var numeroAdição1 = parseInt(prompt(nome + " Digite seu 1 número"));
+	var numeroAdição2 = parseInt(prompt(nome + " Digite seu 2 número"));
+     
+    var resultadoAdição = numeroAdição1 + numeroAdição2;
+}
+
+
+    if(operação == 2) {
+	var numeroSubtração1 = parseInt(prompt(nome + " Digite seu 1 número"));
+	var numeroSubtração2 = parseInt(prompt(nome + " Digite seu 2 número"));
+     
+ 	var resultadoSubtração = numeroSubtração1 - numeroSubtração2;
+ }
+
+    if(operação == 3) {
+		var numeroMultiplicação1 = parseInt(prompt(nome + " Digite seu 1 número"));
+		var numeroMultiplicação2 = parseInt(prompt(nome + " Digite seu 2 número"));
+     
+    	var resultadoMultiplicação = numeroMultiplicação1 * numeroMultiplicação2;
+	}	
+
+	if(operação == 4) {
+		var numeroDivisão1 = parseInt(prompt(nome + " Digite seu 1 número"));
+		var numeroDivisão2 = parseInt(prompt(nome + " Digite seu 2 número"));
+   
+	    var resultadoDivisão = numeroDivisão1 / numeroDivisão2
+	}
+
+	if(operação == 1) {
+		mostra(nome + " ,o seu resultado é " + resultadoAdição)
+	}
+
+	if(operação == 2) {
+		mostra(nome + ", o seu resultado é" + resultadoSubtração)
+	}
+		
+	if(operação == 3) {
+		mostra(nome + " , o seu resultado é " + resultadoMultiplicação)
+	}
+			
+	if(operação == 4) {
+		mostra(nome + ", o seu resultado é " + resultadoDivisão)
+	}			
+</script>

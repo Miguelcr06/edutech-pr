@@ -1,0 +1,39 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext("2d");
+
+	//preencher = fill, retandulo = rect
+	//p determinar inicio e fim da tela usamos o plano cartesiano como no 0, 0 (inicio) 600, 400 (fim)
+	//para mudar a cor usamos fill e o style antes de determinar a forma
+	pincel.fillStyle = "lightgrey"
+	pincel.fillRect(0, 0, 600, 400)
+
+	pincel.fillStyle = "green"
+	pincel.fillRect(0, 0, 200, 400)
+
+	pincel.fillStyle = "red"
+	pincel.fillRect(400, 0, 200, 400)
+
+	//Forma de fazer um triangulo:
+	pincel.fillStyle = "yellow"
+	pincel.beginPath();
+	pincel.moveTo(300, 200)
+	pincel.lineTo(200, 400)
+	pincel.lineTo(400,400)
+	pincel.fill();
+
+	//forma de circulo:
+	//300 e 200 = posição do centro do circulo
+	//50 = raio do circulo
+	//0 e 2 = angulo inicial e final em radianos
+	pincel.fillStyle = "blue"
+	pincel.beginPath()
+	pincel.arc(300, 200, 50, 0, 2 * 3.14)
+	pincel.fill()
+
+	//1 segundo = 1000
+	//setInterval(sus, 1000)
+</script>

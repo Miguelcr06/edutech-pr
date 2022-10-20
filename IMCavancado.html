@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+	<title>Calculadora de IMC avançado</title>
+		<link rel="stylesheet" href="IMCavancado.css">
+	</head>
+	<body>
+	<script>
+
+		    function pulaLinha() {
+		        document.write("<br>");
+		    }
+
+		    function mostra(frase) {
+		        document.write(frase);
+		        pulaLinha();
+		    }
+
+			function calculaImc(altura, peso) {
+				return peso / (altura * altura);
+			}
+
+			function non() {
+				alert("Os valores informados são invalidos.")
+				.value = ""
+				focus()
+			}
+
+			//var pesoInformado = parseInt(prompt("Informe seu peso:"))
+			//if (isNaN(pesoInformado)) {
+			//	non();
+			//}else {
+			//	var alturaInformada = parseInt(prompt("Informe sua altura: (exemplo: 1.50)"))
+			//	if (isNaN(alturaInformada)) {
+			//		non();
+			//	}else {
+			//		var nome = "miçaro";
+			//		var calculo = calculaImc(alturaInformada, pesoInformado);
+			//		mostra(nome + ", o seu IMC é: " + calculo);
+			//	}
+			//}
+
+			var nome = prompt("Informe o seu nome");
+			var alturaInformada = prompt(nome + ", informe sua altura");
+			var pesoInformado = prompt(nome + ", informe seu peso");
+
+			var imc = calculaImc(alturaInformada, pesoInformado);
+
+			document.write(nome + ", o seu IMC é " + imc);
+
+//			function dasdasdad() {
+//				if(imc <= 18,5) {
+//					mostra("Abaixo do ideal")
+//				}else {
+//					if(imc <= 24,9) {
+//						mostra("No ideal")
+//					}else {
+//						if(imc <= 29,9) {
+//							mostra("Levemente acima do ideal")
+//						}else {
+//							if(imc <= 34,9) {
+//								mostra("Obesidade grau 1")
+//							}else {
+//								if(imc <= 39,9) {
+//									mostra("Obesidade grau 2 ou severa")
+//								}else {
+//									mostra("Obesidade grau 3 ou mórbida")
+//								}
+//							}
+//						}
+//					}
+//				}
+//			}
+
+	</script>
+	</body>
+</html>

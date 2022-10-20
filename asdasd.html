@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+<script>
+	function lerDados(){
+   	let numero = parseInt(prompt("Qual número será elevado?"));
+   	let potencia = parseInt(prompt("Elevado a qual potência?"));
+
+	   return validar(numero, potencia);
+	}
+
+	function validar(numero, potencia){
+   	 // verifica antes se é NaN (não faz sentido testar se é < 0 antes de saber se é NaN)
+   	if (isNaN(numero) || isNaN(potencia)){
+      	throw new Error("Os valores inseridos não são válidos...");
+   	}
+
+   	if (numero < 0 || potencia < 0){
+   	   throw new Error("Calcula somente números positivos..."); 
+   	}
+
+    // retorna um array com os valores
+   	return [numero, potencia];
+	}
+
+	function calcular(){
+    // obter os valores usando a sintaxe de destructuring assignment
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+   	 let [numero, potencia] = lerDados();
+   	 let resultado = 1;
+
+   	for (let i = 0; i < potencia; i++){
+   	   resultado *= numero;
+   	}
+
+   	document.write("O resultado é "+ resultado);
+	}
+
+	calcular();
+</script>

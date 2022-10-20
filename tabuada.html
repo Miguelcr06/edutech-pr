@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>")
+    }
+
+    function mostra(frase) {
+        document.write(frase)
+        pulaLinha()
+    }
+
+    var nmr = parseInt(prompt("Escolha o número da tabuada."));
+    var multiplicador = 1;
+    var total = nmr * multiplicador;
+    for (var total = nmr * multiplicador; multiplicador <= 10; multiplicador = multiplicador++) {
+        var total = nmr * multiplicador;
+        mostra(nmr + " x " + multiplicador + " = " + total);
+    }
+
+
+</script> 
