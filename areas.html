@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Áreas das formas geométricas</title>
+		<link rel="stylesheet" href="areas.css">
+	</head>
+	<body onkeypress="return checkMyKey(event);" class="fundo">
+
+		<p class="priPara">Escreva <b>"adição"</b>, <b>"subtração"</b>, <b>"multiplicação"</b>, <b>"divisão"</b>, <b>"potência"</b>, ou para calcular área, <b>"quadrado"</b>, <b>"cubo"</b>, <b>"retângulo"</b>, <b>"triângulo"</b>, <b>"losângo"</b> e <b>"trapézio"</b>(Escreva igual está mostrado).</p>
+
+		<input onkeyup="toLimit(this)"/ class="centro" class="fundo">
+		<button type="button" id="btFechar" class="fundoAzul">Iniciar</button>
+
+		<script>
+
+			var input = document.querySelector("input");
+	        input.focus();
+
+	        function toLimit(string = ""){
+		       string.value = string.value.substring(0,13);
+		    }
+
+		    function checkMyKey(e) {
+				var keyCode;
+				  //  Browsers de verdade
+				if(e.which){
+				    keyCode = e.which;
+				}
+				  // Internet Explorer
+				else if(window.event){
+				    keyCode = e.keyCode;
+				}
+				if (keyCode == 13) {
+				    document.getElementById("btFechar").click(); 
+				}
+			}
+
+			function pulaLinha() {
+				document.write("<br>")
+			}
+
+			function mostra(texto) {
+				pulaLinha()
+				document.write(texto)
+			}
+
+			function nan() {
+				alert("Os valores inseridos não são válidos.")
+				input.value = ""
+				input.focus()
+			}
+
+			function divporzero() {
+				alert("Impossível dividir por zero.")
+				input.value = ""
+				input.focus()
+			}
+
+			function verifica() {
+
+				if (input.value == "") {
+					alert("Verifique a caixa de texto")
+					input.focus()
+				}
+
+				if (input.value == "adição") {
+					var primeironmr = parseInt(prompt("Digite o primeiro número:"))
+					if (isNaN(primeironmr)) {
+						nan()
+					}else {
+						var segundonmr = parseInt(prompt("Digite o segundo número:"))
+						if (isNaN(segundonmr)) {
+							nan()
+						}else {
+							var soma = primeironmr + segundonmr
+							alert("A adição dos números é " + soma)
+						}
+					}
+				}
+
+				if (input.value == "subtração") {
+					var primeirnmr = parseInt(prompt("Digite o primeiro número:"))
+					if (isNaN(primeirnmr)) {
+						nan()
+					}else {
+						var segundnmr = parseInt(prompt("Digite o segundo número:"))
+						if (isNaN(segundnmr)) {
+							nan()
+						}else {
+							var somaMe = primeirnmr - segundnmr
+							alert("A subtração dos números é " + somaMe)
+						}
+					}
+				}
+
+				if (input.value == "multiplicação") {
+					var prinmrvzs = parseInt(prompt("Digite o primeiro número:"))
+					if (isNaN(prinmrvzs)) {
+						nan()
+					}else {
+						var segnmrvzs = parseInt(prompt("Digite o segundo número:"))
+						if (isNaN(segnmrvzs)) {
+							nan()
+						}else {
+							var somavzs = prinmrvzs * segnmrvzs
+							alert("A multiplicação dos números é " + somavzs)
+						}
+					}
+				}
+
+				if (input.value == "divisão") {
+					var prinmrdvd = parseInt(prompt("Digite o primeiro número:"))
+					if (isNaN(prinmrdvd)) {
+						nan()
+					}else {
+						var segnmrdvd = parseInt(prompt("Digite o segundo número:"))
+						if (isNaN(segnmrdvd)) {
+							nan()
+						}else if(segnmrdvd == 0){
+							divporzero()
+						}else {
+							var somadvd = prinmrdvd / segnmrdvd
+							alert("A divisão dos números é " + somadvd)
+						}
+					}
+				}
+
+				if (input.value == "potência") {
+					var basePo = parseInt(prompt("Informe a base da potência."))
+
+					if (isNaN(basePo)) {
+						nan()
+					}else {
+						var elevado = parseInt(prompt("Informe o expoente."))
+
+						if(isNaN(elevado)) {
+							nan()
+						}else {
+							var calculoPo = Math.pow(basePo, elevado)
+							alert("O resultado da potência é " + calculoPo)
+						}
+					}
+				}
+
+				if (input.value == "quadrado") {
+					var baseq = parseInt(prompt("Informe a base:"))
+
+					if (isNaN(baseq)) {
+						nan()
+					}else {
+						var alturaq = parseInt(prompt("Informe a altura:"))
+
+						if (isNaN(alturaq)) {
+							nan()
+						}else {
+							var areaq = baseq * alturaq
+							alert("A área do quadrado é " + areaq)
+						}
+					}
+				}
+
+				if (input.value == "cubo") {
+					var basec = parseInt(prompt("Informe a base:"))
+
+					if (isNaN(basec)) {
+						nan()
+					}else {
+						var alturac = parseInt(prompt("Informe a altura:"))
+
+						if (isNaN(alturac)) {
+							nan()
+						}else {
+							var comprimentoc = parseInt(prompt("Informe o comprimento:"))
+
+							if (isNaN(comprimentoc)) {
+								nan()
+							}else {
+								var areac = basec * alturac * comprimentoc
+								alert("O volume do cubo é " + areac)
+							}
+						}
+					}
+				}
+
+				if (input.value == "retângulo") {
+					var baser = parseInt(prompt("Informe a base:"))
+
+					if (isNaN(baser)) {
+						nan()
+					}else {
+						var alturar = parseInt(prompt("Informe a altura:"))
+
+						if (isNaN(alturar)) {
+							nan()
+						}else {
+							var arear = baser * alturar
+							alert("A área do retângulo é " + arear)
+						}
+					}
+				}
+
+				if (input.value == "triângulo") {
+					var baset = parseInt(prompt("Informe a base:"))
+
+					if (isNaN(baset)) {
+						nan()
+					}else {
+						var alturat = parseInt(prompt("Informe a altura:"))
+
+						if (isNaN(alturat)) {
+							nan()
+						}else {
+							var areat = (baset * alturat) / 2
+							alert("A área do triângulo é " + areat)
+						}
+					}
+				}
+
+				if (input.value == "losângo") {
+					var diagoMa = parseInt(prompt("Informe a diagonal maior"))
+
+					if (isNaN(diagoMa)) {
+						nan()
+					}else {
+						var diagoMe = parseInt(prompt("Informe a diagonal menor"))
+
+						if (isNaN(diagoMe)) {
+							nan()
+						}else {
+							var areal = (diagoMa * diagoMe) / 2
+							mostra("A área do losango é " + areal)
+						}
+					}
+				}
+
+				if (input.value == "trapézio") {
+					var baseMa = parseInt(prompt("Informe a base maior:"))
+
+					if (isNaN(baseMa)) {
+						nan()
+					}else {
+						var baseMe = parseInt(prompt("Informe a base menor:"))
+
+						if (isNaN(baseMe)) {
+							nan()
+						}else {
+							var alturatr = parseInt(prompt("Informe a altura:"))
+
+							if (isNaN(alturatr)) {
+								nan()
+							}else {
+								var areatr = ((baseMa + baseMe) / 2) * alturatr
+								alert("A área do trapézio é " + areatr)
+							}
+						}
+					}
+				}
+
+				if(input.value == "849978") {
+					alert("Você desubriu um dos easter eggs :)")
+				}
+			}
+
+			var button = document.querySelector("button");
+
+			button.onclick = verifica;
+
+		</script>
+	</body>
+</html>
